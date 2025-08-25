@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">RssRandomizer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="min_value_txt">Min</string>
+    <string name="max_value_txt">Max</string>
+    <string name="generate_txt">Generate</string>
 </resources>
