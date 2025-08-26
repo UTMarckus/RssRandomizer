@@ -5,4 +5,6 @@
     <string name="min_value_txt">Min</string>
     <string name="max_value_txt">Max</string>
     <string name="generate_txt">Generate</string>
+    <string name="result_label_txt">Result:</string>
+    <string name="back_btn_txt">Back</string>
 </resources>

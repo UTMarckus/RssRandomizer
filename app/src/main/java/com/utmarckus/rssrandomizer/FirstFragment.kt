@@ -39,11 +39,10 @@ class FirstFragment : Fragment() {
     companion object {
         private const val PREVIOUS_RESULT_KEY = "PREVIOUS_RESULT"
 
-        fun newInstance(prevRes: Int): FirstFragment {
-            val args = Bundle().apply {
+        fun newInstance(prevRes: Int) = FirstFragment().apply {
+            arguments = Bundle().apply {
                 putInt(PREVIOUS_RESULT_KEY, prevRes)
             }
-            return FirstFragment().apply { arguments = args }
         }
     }
 }
