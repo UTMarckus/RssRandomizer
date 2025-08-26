@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.utmarckus.rssrandomizer.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), FirstFragment.GenerateButtonClickedListener {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -15,10 +15,18 @@ class MainActivity : AppCompatActivity() {
         openFirstFragment(0)
     }
 
-    private fun openFirstFragment(prevNum: Int) {
-        val firstFragment = FirstFragment.newInstance(prevNum)
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.container, firstFragment)
-        transaction.commit()
+    private fun openFirstFragment(prevNum: Int) = supportFragmentManager.beginTransaction().apply {
+        replace(R.id.fragment_container, FirstFragment.newInstance(prevNum))
+        commit()
+    }
+
+
+    private fun openSecondFragment(min: Int, max: Int) = supportFragmentManager.beginTransaction().apply {
+        replace(R.id.fragment_container, SecondFragment.newInstance(min, max))
+        commit()
+    }
+
+    override fun onGenerateButtonClicked(min: Int, max: Int) {
+        openSecondFragment(min, max)
     }
 }

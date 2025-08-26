@@ -28,6 +28,7 @@ class SecondFragment : Fragment() {
         val randomResult = arguments?.let {
             (it.getInt(MIN_VALUE_KEY)..it.getInt(MAX_VALUE_KEY)).random().toString()
         }
+        binding.result.text = randomResult
     }
 
     override fun onDestroyView() {
